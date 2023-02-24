@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>{{{网页标题}}}</title>
+	<style>
+		header > main {
+			box-shadow: 0px 2px 5px #000;
+		}
+
+		header > main {
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			width: calc(100% - 45px);
+			height: 43px;
+			padding-left: 48px;
+			background-color: #fff;
+			z-index: 10000;
+			font-size: 40px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		header > details.ce-lan {
+			z-index: 10002;
+			position: fixed;
+			width: 43px;
+			background-color: #0000;
+			left: 0px;
+			top: 0px;
+			height: 43px;
+		}
+
+		header > details.ce-lan > summary::marker , header > details.ce-lan > summary {
+			font-size: 0px!important;
+		}
+
+		header > details.ce-lan > summary {
+			display: inline-block;
+		}
+
+		header > details.ce-lan > summary > svg {
+			height: 36px;
+			width: 36px;
+			padding-left: 3px;
+			padding-top: 3px;
+		}
+
+		header > details.ce-lan > summary > svg:nth-of-type(1) {
+			display: inline-block;
+		}
+
+		header > details.ce-lan > summary > svg:nth-of-type(2) {
+			display: none;
+		}
+
+		header > details.ce-lan[open] > summary > svg:nth-of-type(1) > line:nth-of-type(1) {
+			transform: rotate(45deg) translate(3px, -2.9px);
+		}
+
+		header > details.ce-lan[open] > summary > svg:nth-of-type(1) > line:nth-of-type(2) {
+			transform: rotate(-45deg) translate(-8px, -2px);
+		}
+
+		header > details.ce-lan[open] > summary > svg:nth-of-type(1) > g:nth-of-type(1) > line:nth-of-type(1) {
+			transform: scale(0);
+		}
+
+		header > details.ce-lan[open] > summary > svg:nth-of-type(1) > g:nth-of-type(1) {
+			transform: translate(8px,8px);
+		}
+
+		header > details.ce-lan[open] > summary > svg:nth-of-type(1) line , header > details.ce-lan > summary > svg:nth-of-type(1) line , header > details.ce-lan , header > details.ce-lan + div , header > details.ce-lan > summary > svg:nth-of-type(1) > g:nth-of-type(1) {
+			transition: 0.4s;
+		}
+
+		header > details.ce-lan + div {
+			box-shadow: 2px 0px 5px #000;
+			background-color: #cfc;
+			width: 200px;
+			position: absolute;
+			left: -205px;
+			top: 0px;
+			padding-top: 43px;
+			overflow-y: auto;
+			z-index: 10001;
+			height: 100%;
+		}
+
+		header > details.ce-lan[open] + div {
+			left: 0px;
+		}
+
+		html, body {
+			height: 100%;
+		}
+		
+		body > main {
+			padding-top: 45px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<details class="ce-lan">
+			<summary>
+				<svg focusable="false" viewBox="0 0 16 16" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+					<line x1="0" y1="3" x2="16" y2="3" style="stroke:#000;stroke-width:1"/>
+					<g>
+						<line x1="0" y1="8" x2="16" y2="8" style="stroke:#000;stroke-width:1"/>
+					</g>
+					<line x1="0" y1="13" x2="16" y2="13" style="stroke:#000;stroke-width:1"/>
+				</svg>
+			</summary>
+		</details>
+		<div>
+			{{{侧栏内容}}}
+		</div>
+		<main>
+			{{{标题}}}
+		</main>
+	</header>
+	<main>
+		{{{内容}}}
+	</main>
+</body>
+</html>
